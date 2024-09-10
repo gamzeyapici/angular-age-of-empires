@@ -1,0 +1,32 @@
+<div class="sidebar">
+  <span *ngFor="let age of ages">
+    <button (click)="onClickFilterAge(this.age)"
+            [ngStyle]="selectedAge === age ? { backgroundColor: 'lightblue', color: 'black'} : {}">
+      {{ age }}
+    </button>
+  </span>
+  <hr>
+  <div class="cost-filter-item">
+    <label>
+      <input type="checkbox" (change)="onToggleCheckbox($event, 'food')"> Food
+    </label>
+    <input type="range" min="0" [disabled]="foodValue == null" max="199" [(value)]="foodValue"
+           (input)="onChangeRange($event, 'food')">
+  </div>
+
+  <div class="cost-filter-item">
+    <label>
+      <input type="checkbox" (change)="onToggleCheckbox($event, 'gold')"> Gold
+    </label>
+    <input type="range" min="0" [disabled]="goldValue == null" max="199" [(value)]="goldValue"
+           (input)="onChangeRange($event, 'gold')">
+  </div>
+
+  <div class="cost-filter-item">
+    <label>
+      <input type="checkbox" (change)="onToggleCheckbox($event, 'wood')"> Wood
+    </label>
+    <input type="range" min="0" [disabled]="woodValue == null" max="199" [(value)]="woodValue"
+           (input)="onChangeRange($event, 'wood')">
+  </div>
+</div>

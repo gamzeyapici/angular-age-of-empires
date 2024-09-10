@@ -1,0 +1,45 @@
+.unit-container {
+  .units {
+    width: 77%;
+    position: relative;
+    left: 20%;
+    .unit-info {
+      color: white;
+      text-align: center;
+    }
+    .table-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        thead {
+          background-color: #f4f4f4;
+          th {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 2px solid #ddd;
+          }
+        }
+        tbody {
+          tr {
+              background-color: rgba(249, 249, 249, 0.9);
+            cursor: pointer;
+            td {
+              padding: 10px;
+              border-bottom: 1px solid rgba(221, 221, 221, 0.4);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+<div class="unit-detail-container">
+  <div *ngIf="unit; else elseLoading" class="card">
+    <div class="card-header">
+      <span>{{ unit.id }}</span> - <span>{{ unit.name }}</span>
+    </div>
+
+    <div class="card-body">
+      <p><b>Description:</b> {{ unit.description }}</p>
+      <p><b>Age:</b> {{ unit.age }}</p>
+      <p><b>Build Time:</b> {{ unit.build_time }}</p>
+
+      <span *ngIf="unit.cost; else elseBlock">
+        🍖   {{ unit.cost.Food || '-' }}
+        🪵   {{ unit.cost.Wood || '-' }}
+        ⚜️   {{ unit.cost.Gold || '-' }}
+  </span>
+
+      <p><b>Reload Time:</b> {{ unit.reload_time }}</p>
+      <p><b>Hit Points:</b> {{ unit.hit_points }}</p>
+      <p><b>Attack:</b> {{ unit.attack }}</p>
+      <p><b>Accuracy:</b> {{ unit.accuracy }}</p>
+      <ng-template #elseBlock>
+        <span>-</span>
+      </ng-template>
+    </div>
+
+    <div class="card-footer">
+      <p><b>Expansion:</b> {{ unit.expansion }}</p>
+    </div>
+  </div>
+</div>
+<ng-template #elseLoading>
+  <span>Loading...</span>
+</ng-template>

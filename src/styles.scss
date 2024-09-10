@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Noto Serif', serif;
+  background: url('/assets/images/age-of-bg.jpg') center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+a {
+  text-decoration: none;
+}
+
+.castle {
+  background-color: rgba(122, 77, 25, 0.9);
+}
+.dark {
+  background-color: #2f2f2f;
+}
+.imperial {
+  background-color: #712324;
+}
+.feudal {
+  background-color: #0e4d37;
+}

@@ -1,0 +1,35 @@
+<div class="unit-container">
+  <sidebar></sidebar>
+  <div class="units">
+    <div class="table-container">
+      <table>
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Cost</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let unit of filteredUnits" [routerLink]="['/units', unit.id]">
+          <td>{{ unit.id }}</td>
+          <td>{{ unit.name }}</td>
+          <td class="unit-info" [ngClass]="getColorByAge(unit)">{{ unit.age }}</td>
+          <td *ngIf="unit.cost; else elseBlock">
+            🍖{{ unit.cost.Food || '0' }}
+            🪵{{ unit.cost.Wood || '0' }}
+            ⚜️{{ unit.cost.Gold || '0' }}
+          </td>
+          <ng-template #elseBlock>
+            <span> 🍖0  🪵0  ⚜️0</span>
+          </ng-template>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
